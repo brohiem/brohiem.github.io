@@ -60,7 +60,8 @@
             }
         }		
       
-        function showVideo(value,width,height) {			
+        function showVideo(value,width,height) {	
+		alert(value);
 			if (value) {
 				$("#youtube_video").html('<object width="'+width+'" height="'+height+'" data="https://www.youtube.com/embed/'+value+'"></object>');
 			}
