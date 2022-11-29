@@ -46,7 +46,7 @@
 	<div class="disabled_overlay"></div>
 	<div class="youtube-wrapper">
                 <!-- <input id="youtube_input" type="text" value="CvkmVRS61SI"> -->
-  		<div id="youtube_video"></div>
+		<iframe><div id="youtube_video"></div></iframe>
 	</div>
 
     <!-- Custom logic of the Custom element -->
@@ -76,8 +76,8 @@
 			return (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
         }
       
-        function setup(width,height) {
-			const video = $("#youtube_input").val();
+        function setup(video,width,height) {
+// 			const video = $("#youtube_input").val();
 		alert("Video: " + video);
 			showVideo(video,width,height);
 // 			$("#youtube_input").on('input', function() {
@@ -97,13 +97,11 @@
         function initCustomElement() {
             try {
                 CustomElement.init((element, _context) => {
-			console.log('-----------');
-				  console.log(element);
-			           console.log('-----------');
+			          var video = (element.config?element.config.video:"CvkmVRS61SI");
 				  var width = (element.config?element.config.width:"400");
 				  var height = (element.config?element.config.height:"300");
                   // Setup with initial value and disabled state
-                  setup("CvkmVRS61SI",width,height);  
+                  setup(video,width,height);  
                   updateDisabled(element.disabled);
                   updateSize();
                 });
