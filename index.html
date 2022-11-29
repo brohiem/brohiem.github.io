@@ -45,7 +45,7 @@
 <body>
 	<div class="disabled_overlay"></div>
 	<div class="youtube-wrapper">
-		<input id="youtube_input" type="text" value="CvkmVRS61SI">
+                <!-- <input id="youtube_input" type="text" value="CvkmVRS61SI"> -->
 		<div id="youtube_video"></div>
 	</div>
 
@@ -96,6 +96,9 @@
         function initCustomElement() {
 		alert('am here');
             try {
+		    console.log('--------////--------');
+		    console.log(element.config.video);
+		    console.log('--------////--------');
                 CustomElement.init((element, _context) => {
 				  var width = (element.config?element.config.width:"400");
 				  var height = (element.config?element.config.height:"300");
